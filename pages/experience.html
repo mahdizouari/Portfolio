@@ -3,156 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work Experience</title>
-    <link rel="stylesheet" href="../style/style.css">
-    <iframe src="../audio.html" style="display:none;"></iframe>
-
-</head>
-<body>
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="academic.html">Academic Background</a></li>
-            <li><a href="skills.html">Technical Skills</a></li>
-            <li><a href="experience.html">Work Experience</a></li>
-            <li><a href="hobbies.html">Hobbies</a></li>
-            <li><a href="quiz.html">Quiz</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-
-    <!-- Work Experience Section -->
-    <section class="experience-section">
-        
-        <h2>Work Experience</h2>
-        <div class="experience-container">
-            <!-- ASM Experience -->
-            <a href="https://asm-tunisie.com/" target="_blank" class="experience-item">
-                <h3>Summer Internship</h3>
-                <img src="../images/asm.jpg" alt="ASM Logo" class="experience-logo">
-
-                <p><strong>Date:</strong> June 15, 2024 - July 15, 2024</p>
-                <p><strong>Company:</strong> ASM (All Soft Multimedia)</p>
-                <p><strong>Description:</strong> ASM is a software and IT services company with over 4500 clients. The company specializes in software engineering, website creation, mobile app development, and point-of-sale systems.</p>
-                <p><strong>Role:</strong> Built a showcase website using Laravel and MySQL to professionally present the company's services and products.</p>
-            </a>
+    <title>Work Experience & Projects | Mahdi Zouari</title>
     
-            <!-- Freelance Experience -->
-            <a href="https://fripsakyetna.com/" target="_blank" class="experience-item">
-                <h3>Freelance Website Project</h3>
-                <img src="../images/frip.jpg" alt="Fripsakyetna Logo" class="experience-logo">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config to match your custom theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        mono: ['"Courier New"', 'Courier', 'monospace'],
+                    },
+                    colors: {
+                        neon: '#00ff00',
+                        darkBg: 'rgba(0, 0, 0, 0.9)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body class="bg-gray-900 text-white font-mono">
+    <div id="audio-container">
+        <iframe src="../audio.html" style="display:none;"></iframe>
+    </div>
 
-                <p><strong>Date:</strong> July 22, 2024 - November 9, 2024</p>
-                <p><strong>Website Name:</strong> Fripsakyetna</p>
-                <p><strong>Description:</strong> An e-commerce platform designed for selling clothes, built with Laravel and MySQL, featuring a clean and responsive design tailored to enhance the user shopping experience.</p>
-                <p><strong>Role:</strong> Independently developed the website, including design and functionality, using modern web development tools.</p>
-            </a>
+    <!-- Navigation Menu -->
+    <nav class="bg-black/95 p-5 border-b border-neon shadow-[0_0_15px_rgba(0,255,0,0.3)] sticky top-0 z-50">
+    <ul class="flex flex-wrap justify-center gap-6 text-neon font-bold tracking-wide">
+        <li><a href="/Portfolio/index.html" class="hover:text-white transition-colors duration-300">Home</a></li>
+        <li><a href="/Portfolio/pages/academic.html" class="hover:text-white transition-colors duration-300">Academic Background</a></li>
+        <li><a href="/Portfolio/pages/skills.html" class="hover:text-white transition-colors duration-300">Technical Skills</a></li>
+        <li><a href="/Portfolio/pages/experience.html" class="hover:text-white transition-colors duration-300">Work Experience & Projects</a></li>
+        <li><a href="/Portfolio/pages/contact.html" class="hover:text-white transition-colors duration-300">Contact</a></li>
+    </ul>
+</nav>
+    <!-- Work Experience & Projects Section -->
+    <section class="min-h-screen bg-darkBg py-20 px-4 md:px-8 flex flex-col items-center shadow-inner">
+        
+        <h2 class="text-4xl md:text-5xl font-bold mb-16 text-neon drop-shadow-[0_0_10px_#00ff00] uppercase tracking-wider text-center">
+            Experience & Projects
+        </h2>
+
+        <div class="w-full max-w-5xl space-y-16">
+            
+            <!-- WORK EXPERIENCE SUB-SECTION -->
+            <div>
+                <h3 class="text-2xl font-bold text-white mb-8 border-b-2 border-neon/50 pb-2 inline-block">Professional Experience</h3>
+                <div class="space-y-6">
+                    
+                    <!-- Data Noxus -->
+                    <div class="group relative block bg-black/80 border border-neon p-6 rounded-xl shadow-[0_0_15px_rgba(0,255,0,0.2)] hover:shadow-[0_0_30px_rgba(0,255,0,0.6)] hover:-translate-y-1 transition-all duration-300">
+                        <h4 class="text-xl md:text-2xl font-bold text-white mb-2 text-center md:text-left">Machine Learning & DevOps Intern</h4>
+                        <div class="flex flex-col md:flex-row justify-between text-gray-400 mb-4 text-sm md:text-base border-b border-gray-700 pb-2">
+                            <span><strong class="text-neon">Company:</strong> Data Noxus | Sfax, Tunisia</span>
+                            <span><strong class="text-neon">Date:</strong> August 2026</span>
+                        </div>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300 text-sm md:text-base leading-relaxed pl-2">
+                            <li>Engineered an autonomous trading bot interacting with a FastAPI-hosted synthetic market simulating GBM and HMM regimes, utilizing <strong class="text-neon">LightGBM and ARIMA</strong>.</li>
+                            <li>Containerized the application with <strong class="text-neon">Docker</strong> and orchestrated automated <strong class="text-neon">CI/CD pipelines to AWS</strong>, managing dependencies with uv/Poetry and version control via Gitea.</li>
+                            <li>Developed a real-time <strong class="text-neon">Streamlit</strong> monitoring dashboard connected to the market API for live portfolio tracking.</li>
+                        </ul>
+                    </div>
+
+                    <!-- IIT Sfax Researcher -->
+                    <div class="group relative block bg-black/80 border border-neon p-6 rounded-xl shadow-[0_0_15px_rgba(0,255,0,0.2)] hover:shadow-[0_0_30px_rgba(0,255,0,0.6)] hover:-translate-y-1 transition-all duration-300">
+                        <h4 class="text-xl md:text-2xl font-bold text-white mb-2 text-center md:text-left">Data Engineering & ML Researcher (FYP)</h4>
+                        <div class="flex flex-col md:flex-row justify-between text-gray-400 mb-4 text-sm md:text-base border-b border-gray-700 pb-2">
+                            <span><strong class="text-neon">Institution:</strong> IIT Sfax | Sfax, Tunisia</span>
+                            <span><strong class="text-neon">Date:</strong> March 2026 - May 2026</span>
+                        </div>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300 text-sm md:text-base leading-relaxed pl-2">
+                            <li>Designed a <strong class="text-neon">PostgreSQL OLAP</strong> data warehouse utilizing a Star Schema architecture to process transaction, block, and temporal data.</li>
+                            <li>Engineered a full <strong class="text-neon">ETL pipeline</strong> extracting raw blockchain data via the Mempool.space API and a MongoDB staging environment.</li>
+                            <li>Implemented anomaly detection models including <strong class="text-neon">Z-Score, IQR, DBSCAN, and Isolation Forest</strong> to identify suspicious Bitcoin transactions.</li>
+                        </ul>
+                    </div>
+
+                    <!-- ASM Internship -->
+                    <div class="group relative block bg-black/80 border border-neon p-6 rounded-xl shadow-[0_0_15px_rgba(0,255,0,0.2)] hover:shadow-[0_0_30px_rgba(0,255,0,0.6)] hover:-translate-y-1 transition-all duration-300">
+                        <img src="../images/asm.jpg" alt="ASM Logo" class="absolute top-4 right-4 w-12 h-12 md:w-16 md:h-16 rounded opacity-70 group-hover:opacity-100 transition-opacity hidden sm:block">
+                        <h4 class="text-xl md:text-2xl font-bold text-white mb-2 text-center md:text-left">Full-Stack Web Developer Intern</h4>
+                        <div class="flex flex-col md:flex-row justify-between text-gray-400 mb-4 text-sm md:text-base border-b border-gray-700 pb-2 pr-0 sm:pr-20">
+                            <span><strong class="text-neon">Company:</strong> All Soft Multimedia (ASM) | Sfax, Tunisia</span>
+                            <span><strong class="text-neon">Date:</strong> July 2025</span>
+                        </div>
+                        <ul class="list-disc list-inside space-y-2 text-gray-300 text-sm md:text-base leading-relaxed pl-2 pr-0 sm:pr-16">
+                            <li>Developed a full-stack enterprise cloud-native application utilizing a <strong class="text-neon">Spring Boot REST API</strong> and an <strong class="text-neon">Angular front-end</strong>.</li>
+                            <li>Interfaced seamlessly with <strong class="text-neon">AWS S3 and Cloud MinIO</strong> object storage.</li>
+                            <li>Implemented a dynamic, high-performance search and filtering engine to process and retrieve specific files from large volumes of data.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ACADEMIC & PERSONAL PROJECTS SUB-SECTION -->
+            <div>
+                <h3 class="text-2xl font-bold text-white mb-8 border-b-2 border-neon/50 pb-2 inline-block">Featured Projects</h3>
+                <div class="space-y-6">
+                    
+                    <!-- Adaptive Insurance -->
+                    <a href="https://github.com/mahdizouari" target="_blank" class="group relative block bg-black/80 border border-neon p-6 rounded-xl shadow-[0_0_15px_rgba(0,255,0,0.2)] hover:shadow-[0_0_30px_rgba(0,255,0,0.6)] hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                        <h4 class="text-xl md:text-2xl font-bold text-white mb-2 text-center md:text-left">Adaptive Insurance Risk Prediction Model</h4>
+                        <div class="flex flex-col md:flex-row justify-between text-gray-400 mb-4 text-sm md:text-base border-b border-gray-700 pb-2">
+                            <span><strong class="text-neon">Tech Stack:</strong> Python, Scikit-learn, Pandas, NumPy</span>
+                            <span><strong class="text-neon">Domain:</strong> Data Mining & Machine Learning</span>
+                        </div>
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                            Engineered a comprehensive data mining workflow on a heterogeneous dataset. Handled missing values, discretized features via <strong class="text-neon">KBinsDiscretizer</strong>, and applied <strong class="text-neon">VarianceThreshold</strong> for feature selection. Trained and evaluated multiple models (Decision Tree, GridSearch-optimized Random Forest, balanced Logistic Regression) to maximize claim prediction accuracy.
+                        </p>
+                    </a>
+
+                    <!-- Library Management System -->
+                    <a href="https://github.com/mahdizouari" target="_blank" class="group relative block bg-black/80 border border-neon p-6 rounded-xl shadow-[0_0_15px_rgba(0,255,0,0.2)] hover:shadow-[0_0_30px_rgba(0,255,0,0.6)] hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                        <h4 class="text-xl md:text-2xl font-bold text-white mb-2 text-center md:text-left">Enterprise Library Management System</h4>
+                        <div class="flex flex-col md:flex-row justify-between text-gray-400 mb-4 text-sm md:text-base border-b border-gray-700 pb-2">
+                            <span><strong class="text-neon">Tech Stack:</strong> ASP.NET Core, Blazor, Entity Framework Core</span>
+                            <span><strong class="text-neon">Domain:</strong> Full-Stack Software Architecture</span>
+                        </div>
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                            Engineered a comprehensive full-stack platform implementing a layered architecture with the <strong class="text-neon">Repository Pattern, DTOs, and JWT-based security</strong>. Handled complex entity relationships for clients, employees, inventory, and automated invoicing.
+                        </p>
+                    </a>
+
+                    <!-- Fripsakytna -->
+                    <a href="https://fripsakyetna.com/" target="_blank" class="group relative block bg-black/80 border border-neon p-6 rounded-xl shadow-[0_0_15px_rgba(0,255,0,0.2)] hover:shadow-[0_0_30px_rgba(0,255,0,0.6)] hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                        <img src="../images/frip.jpg" alt="Fripsakyetna Logo" class="absolute top-4 right-4 w-12 h-12 md:w-16 md:h-16 rounded opacity-70 group-hover:opacity-100 transition-opacity hidden sm:block">
+                        <h4 class="text-xl md:text-2xl font-bold text-white mb-2 text-center md:text-left">Fripsakytna.com E-Commerce Platform</h4>
+                        <div class="flex flex-col md:flex-row justify-between text-gray-400 mb-4 text-sm md:text-base border-b border-gray-700 pb-2 pr-0 sm:pr-20">
+                            <span><strong class="text-neon">Tech Stack:</strong> Laravel, PHP, MySQL, Bootstrap</span>
+                            <span><strong class="text-neon">Status:</strong> Live Production</span>
+                        </div>
+                        <p class="text-gray-300 text-sm md:text-base leading-relaxed pr-0 sm:pr-16">
+                            Independently developed and deployed a live e-commerce platform from scratch. Engineered the database schema, implemented secure user authentication workflows, and built a custom admin dashboard for complete product lifecycle management.
+                        </p>
+                    </a>
+
+                </div>
+            </div>
+
         </div>
     </section>
-    
-    
-    
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Personal Website | Designed with dedication and passion. Stay connected through my journey of growth and achievements.</p>
+    <footer class="bg-black text-center py-6 border-t border-neon shadow-[0_-5px_15px_rgba(0,255,0,0.2)] mt-auto">
+        <p class="text-gray-400 text-sm md:text-base">&copy; 2026 Mahdi Zouari | Designed with dedication and passion.</p>
     </footer>
+
+    <script src="../javascript/script.js"></script>
 </body>
 </html>
-<style>
-    .experience-section {
-    background: rgba(0, 0, 0, 0.9); /* Dark background */
-    color: #ffffff;
-    padding: 60px;
-    
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace; /* Monospaced font */
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
-        flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center;
-    min-height: 15px; /* Ensures the section takes full viewport height */
-}
-
-.experience-section h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #00ff00;
-    text-shadow: 0 0 10px #00ff00;
-}
-
-.experience-container {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.experience-item {
-    position: relative;
-    display: block;
-    padding: 20px;
-    border: 1px solid #00ff00;
-    border-radius: 8px;
-    background: rgba(20, 20, 20, 0.8);
-    color: #ffffff;
-    text-decoration: none;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-    overflow: hidden;
-    font-family: 'Courier New', Courier, monospace;
-    text-align: left;
-}
-.experience-logo {
-    position: absolute;
-    top: -10px;
-    right: -600px;
-    width: 100px; /* Increased width */
-    height: auto;
-}
-.experience-item h3 {
-    text-align: center; /* Center the h3 text */
-    margin-bottom: 10px; /* Add spacing below the title */
-}
-
-.experience-item strong {
-    color: #00ff00; /* Set strong text to green */
-}
-
-.experience-item::before {
-    content: "";
-    position: absolute;
-    top: 10px; /* Position from the top */
-    right: 10px; /* Position from the right */
-    width: 50px; /* Adjust logo width */
-    height: 50px; /* Adjust logo height */
-    background-image: var(--logo-url);
-    background-size: contain; /* Ensures the logo fits within the dimensions */
-    background-repeat: no-repeat; /* Prevents repetition of the image */
-    background-position: center;
-}
-
-
-
-.experience-item:hover {
-    background: rgba(0, 0, 0, 0.9);
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.7);
-    transform: scale(1.03);
-}
-
-/* Hover effect: Show blurred logo */
-
-
-.experience-item:hover::before {
-    opacity: 0.6;
-    filter: blur(5px);
-}
-
-/* Ensure content stays visible over hover */
-.experience-item > * {
-    position: relative;
-    z-index: 1;
-}
-</style>
-<script src="../javascript/script.js" ></script>
