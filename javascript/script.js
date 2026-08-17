@@ -1,60 +1,10 @@
+// Minimal script: keep page interaction static and reduce motion
+// No click handlers on the heading; navbar uses CSS only (no extra JS animation)
 
- // jarvis navbar
-    document.addEventListener('DOMContentLoaded', () => {
-        const navLinks = document.querySelectorAll('nav ul li a');
-        
-        navLinks.forEach(link => {
-            link.addEventListener('mouseover', () => {
-                link.style.animation = 'jarvisPulse 1.5s infinite';
-            });
-
-            link.addEventListener('mouseout', () => {
-                link.style.animation = 'none';
-            });
-        });
+document.addEventListener('DOMContentLoaded', () => {
+    // ensure any previously inline animation is cleared
+    const navLinks = document.querySelectorAll('nav ul li a');
+    navLinks.forEach(link => {
+        link.style.animation = 'none';
     });
-
-
-
-    
-    document.getElementById('welcome-heading').addEventListener('click', function() {
-        this.classList.add('disappear');
-        setTimeout(() => {
-            this.style.display = 'none';
-            const paragraph = document.getElementById('welcome-paragraph');
-            paragraph.style.display = 'block';
-            paragraph.classList.add('dust');
-        }, 1000); //dust didn't work
-    });
-
-
-
-
-    document.getElementById('welcome-heading').addEventListener('click', function() {
-        this.classList.add('disappear');
-        setTimeout(() => {
-            this.style.display = 'none';
-            const paragraph = document.getElementById('welcome-paragraph');
-            paragraph.style.display = 'block';
-            typeWriter(paragraph, "Hello! I am Mehdi Zouari. An IT engineer committed to excellence in technology and innovation. Constantly seeking opportunities to grow, learn, and contribute to impactful projects, I am focused on leveraging technology to create a better future.");
-        }, 400); 
-    });
-    
-    function typeWriter(element, text) {
-        let i = 0;
-        function typing() {
-            if (i < text.length) {
-                element.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typing, 40); 
-            } else {
-                element.style.borderRight = 'none'; 
-            }
-        }
-        typing();
-    }
-
-    
-
-
-    
+});

@@ -2,6 +2,7 @@
             background: #121212;
             color: #00ff00;
             font-family: 'Courier New', Courier, monospace;
+            padding-top: 64px; /* leave space for fixed navbar */
         }
 
         nav ul {
@@ -59,49 +60,11 @@
             color: #00ff00; 
         }
         
-        nav ul li a::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            width: 10px;
-            height: 10px;
-            background: #00ff00;
-            border-radius: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            transition: transform 0.3s ease;
-        }
+        /* Removed small hover-dot and rotating circle to reduce motion */
+        /* Keeping simple hover color change for accessibility */
+        nav ul li a::before { /* decorative gradient background already defined earlier, keep it */ }
+        /* No ::after rotating circle animation */
         
-        nav ul li a:hover::before {
-            transform: translate(-50%, -50%) scale(1);
-        }
-        
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            width: 100%;
-            height: 100%;
-            border: 2px solid #00ff00;
-            border-radius: 50%;
-            transform: translate(-50%, -50%) scale(0);
-            transition: transform 0.5s ease;
-        }
-            
-        nav ul li a:hover::after {
-            transform: translate(-50%, -50%) scale(1);
-            animation: rotate 1s linear infinite;
-        }
-        
-        @keyframes rotate {
-            from {
-                transform: translate(-50%, -50%) scale(1) rotate(0deg);
-            }
-            to {
-                transform: translate(-50%, -50%) scale(1) rotate(360deg);
-            }
-        }
         
         #home {
             position: relative;
@@ -188,7 +151,7 @@
         }
         
         #welcome-heading {
-            cursor: pointer;
+            cursor: default; /* not clickable */
             font-size: 2em; /* Increase heading size */
             text-align: center; 
             margin-bottom: 20px; 
@@ -208,13 +171,13 @@
          
         #welcome-paragraph {
             color: #00ff00;
-            font-size: 1.8em; /* Increase paragraph size */
-            line-height: 1.5; /* Improve readability */
-            overflow: hidden;
-            animation: glow 1s infinite alternate;
+            font-size: 1.2em; /* comfortable paragraph size */
+            line-height: 1.6; /* Improve readability */
+            overflow: visible;
+            animation: none; /* remove continuous glow to reduce motion */
             text-align: center; /* Center the text */
             padding: 0 20px; /* Add padding for better layout */
-            max-width: 600px; /* Limit the width for shorter lines */
+            max-width: 700px; /* Limit the width for shorter lines */
             margin: 0 auto; /* Center the paragraph */
             font-family: 'Courier New', Courier, monospace; /* Monospaced font */
 
