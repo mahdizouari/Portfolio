@@ -3,53 +3,208 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahdi Zouari | Portfolio</title>
-    <link rel="stylesheet" href="style/style.css">
-    <iframe src="audio.html" style="display:none;"></iframe>
-</head> 
-<body>
+    <title>Technical Skills | Mahdi Zouari</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config to match your custom theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        mono: ['"Courier New"', 'Courier', 'monospace'],
+                    },
+                    colors: {
+                        neon: '#00ff00',
+                        darkBg: 'rgba(0, 0, 0, 0.9)',
+                    },
+                    animation: {
+                        'shine': 'shine 3s linear infinite',
+                    },
+                    keyframes: {
+                        shine: {
+                            '0%': { backgroundPosition: '0% 50%' },
+                            '100%': { backgroundPosition: '100% 50%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="../style/style.css">
+</head>
+<body class="bg-gray-900 text-white font-mono">
+    <div id="audio-container">
+        <iframe src="../audio.html" style="display:none;"></iframe>
+    </div>
+
     <!-- Navigation Menu -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="pages/academic.html">Academic Background</a></li>
-            <li><a href="pages/skills.html">Technical Skills</a></li>
-            <li><a href="pages/experience.html">Work Experience & Projects</a></li>
-            <li><a href="pages/hobbies.html">Hobbies</a></li>
-            <li><a href="pages/contact.html">Contact</a></li>
+    <nav class="bg-black/95 p-5 border-b border-neon shadow-[0_0_15px_rgba(0,255,0,0.3)] sticky top-0 z-50">
+        <ul class="flex flex-wrap justify-center gap-6 text-neon font-bold tracking-wide">
+            <li><a href="../index.html" class="hover:text-white transition-colors duration-300">Home</a></li>
+            <li><a href="academic.html" class="hover:text-white transition-colors duration-300">Academic Background</a></li>
+            <li><a href="skills.html" class="text-white drop-shadow-[0_0_8px_#00ff00]">Technical Skills</a></li>
+            <li><a href="experience.html" class="hover:text-white transition-colors duration-300">Work Experience & Projects</a></li>
+            <li><a href="hobbies.html" class="hover:text-white transition-colors duration-300">Hobbies</a></li>
+            <li><a href="quiz.html" class="hover:text-white transition-colors duration-300">Quiz</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors duration-300">Contact</a></li>
         </ul>
     </nav>
-    
-    <!-- Home Page Content -->
-    <section id="home">
-        <video autoplay muted loop>
-            <source src="background_video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+
+    <!-- Technical Skills Section -->
+    <section id="skills" class="min-h-screen bg-darkBg py-20 px-4 md:px-8 flex flex-col items-center shadow-inner">
         
-        <h1 id="welcome-heading">Mahdi Zouari</h1>
-        <!-- Added a professional subtitle -->
-        <h2 style="color: white; text-align: center; margin-top: -10px; margin-bottom: 20px;">Computer Engineering Student – Software Engineering</h2>
+        <!-- Animated Gradient Heading -->
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-neon via-white to-neon animate-shine drop-shadow-[0_0_10px_rgba(0,255,0,0.8)]" style="background-size: 200% auto;">
+            Technical Skills
+        </h2>
         
-        <!-- Upgraded professional summary -->
-        <p id="welcome-paragraph">Hello! I am Mahdi Zouari, a Software Engineering student at the International Institute of Technology (IIT) in Sfax. I specialize in building robust software systems, intelligent data pipelines, and cloud-native architectures. Driven by the intersection of Machine Learning, DevOps, and Applied Mathematics, I am passionate about solving complex research and engineering challenges.</p>       
-        
-        <!-- Social Media Links -->
-        <div id="social-media">
-            <!-- Added GitHub to the front -->
-            <a href="https://github.com/mahdizouari" target="_blank"><img src="images/github.png" alt="GitHub"></a>
-            <a href="https://www.linkedin.com/in/mahdi-zouari-bb01b1279/" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a>
-            <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=100009832151933" target="_blank"><img src="images/facebook.png" alt="Facebook"></a>
-            <a href="https://www.instagram.com/mehdi__zouari/" target="_blank"><img src="images/instagram.png" alt="Instagram"></a>
-            <a href="https://www.whatsapp.com" target="_blank"><img src="images/whatsapp.png" alt="WhatsApp"></a>
+        <p class="text-neon text-lg md:text-xl text-center max-w-3xl mb-16 drop-shadow-[0_0_5px_#00ff00] leading-relaxed">
+            Over the years, I have acquired a diverse set of technical skills, enabling me to engineer intelligent data pipelines, robust cloud architectures, and full-stack enterprise systems.
+        </p>
+
+        <!-- Skills Grid Container (Organized by CV Categories) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10 w-full max-w-7xl">
+
+            <!-- Category 1: AI, ML & Data Science -->
+            <div class="bg-black/80 border border-neon p-6 rounded-xl shadow-[0_0_15px_rgba(0,255,0,0.3)]">
+                <h3 class="text-xl font-bold text-white mb-4 border-b border-neon/50 pb-2 text-center uppercase tracking-widest drop-shadow-[0_0_5px_#00ff00]">AI, ML & Data Science</h3>
+                <div class="group flex flex-wrap justify-center gap-4 mt-6">
+                    <!-- Items -->
+                    <div class="skill-item w-20 text-center transition-all duration-300 group-hover:blur-[2px] hover:!blur-none hover:-translate-y-4 hover:scale-110 cursor-pointer">
+                        <img src="../images/python.png" alt="Python" class="w-12 h-12 mx-auto mb-2 drop-shadow-[0_0_5px_#00ff00]" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5968/5968350.png'">
+                        <p class="text-neon text-sm font-bold mt-2">Scikit-learn</p>
+                    </div>
+                    <div class="skill-item w-20 text-center transition-all duration-300 group-hover:blur-[2px] hover:!blur-none hover:-translate-y-4 hover:scale-110 cursor-pointer">
+                        <p class="text-white border border-neon rounded py-3 bg-gray-800 text-xs font-bold mb-2">PANDAS</p>
+                        <p class="text-neon text-sm font-bold mt-2">Pandas</p>
+                    </div>
+                    <div class="skill-item w-20 text-center transition-all duration-300 group-hover:blur-[2px] hover:!blur-none hover:-translate-y-4 hover:scale-110 cursor-pointer">
+                        <p class="text-white border border-neon rounded py-3 bg-gray-800 text-xs font-bold mb-2">LGBM</p>
+                        <p class="text-neon text-sm font-bold mt-2">LightGBM</p>
+                    </div>
+                    <div class="skill-item w-20 text-center transition-all duration-300 group-hover:blur-[2px] hover:!blur-none hover:-translate-y-4 hover:scale-110 cursor-pointer">
+                        <p class="text-white border border-neon rounded py-3 bg-gray-800 text-xs font-bold mb-2">ARIMA</p>
+                        <p class="text-neon text-sm font-bold mt-2">ARIMA</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 2: Software Architecture -->
+            <div class="bg-black/80 border border-neon p-6 rounded-xl shadow-[0_0_15px_rgba(0,255,0,0.3)]">
+                <h3 class="text-xl font-bold text-white mb-4 border-b border-neon/50 pb-2 text-center uppercase tracking-widest drop-shadow-[0_0_5px_#00ff00]">Software Architecture</h3>
+                <div class="group flex flex-wrap justify-center gap-4 mt-6">
+                    <div class="skill-item w-20 text-center transition-all duration-300 group-hover:blur-[2px] hover:!blur-none hover:-translate-y-4 hover:scale-110 cursor-pointer">
+                        <img src="../images/laravel.png" alt="Laravel" class="w-12 h-12 mx-auto mb-2 drop-shadow-[0_0_5px_#00ff00]" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5968/5968332.png'">
+                        <p class="text-neon text-sm font-bold mt-2">Laravel</p>
+                    </div>
+                    <div class="skill-item w-20 text-center transition-all duration-300 group-hover:blur-[2px] hover:!blur-none hover:-translate-y-4 hover:scale-110 cursor-pointer">
+                        <p class="text-white border border-neon rounded py-3 bg-gray-800 text-xs font-bold mb-2">SPRING</p>
+                        <p class="text-neon text-sm font-bold mt-2">Spring Boot</p>
+                    </div>
+                    <div class="skill-item w-20 text-center transition-all duration-300 group-hover:blur-[2px] hover:!blur-none hover:-translate-y-4 hover:scale-110 cursor-pointer">
+                        <p class="text-white border border-neon rounded py-3 bg-gray-800 text-xs font-bold mb-2">ANGULAR</p>
+                        <p class="text-neon text-sm font-bold mt-2">Angular</p>
+                    </div>
+                    <div class="skill-item w-20 text-center transition-all duration-300 group-hover:blur-[2px] hover:!blur-none hover:-translate-y-4 hover:scale-110 cursor-pointer">
+                        <p class="text-white border border-neon rounded py-3 bg-gray-800 text-xs font-bold mb-2">.NET</p>
+                        <p class="text-neon text-sm font-bold mt-2">ASP.NET</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 3: DevOps, Cloud & Tools -->
+            <div class="bg-black/80 border border-neon p-6 rounded-xl shadow-[0_0_15px_rgba(0,255,0,0.3)]">
+                <h3 class="text-xl font-bold text-white mb-4 border-b border-neon/50 pb-2 text-center uppercase tracking-widest drop-shadow-[0_0_5px_#00ff00]">DevOps & Cloud</h3>
+                <div class="group flex flex-wrap justify-center gap-4 mt-6">
+                    <div class="skill-item w-20 text-center transition-all duration-300 group-hover:blur-[2px] hover:!blur-none hover:-translate-y-4 hover:scale-110 cursor-pointer">
+                        <p class="text-white border border-neon rounded py-3 bg-gray-800 text-xs font-bold mb-2">AWS</p>
+                        <p class="text-neon text-sm font-bold mt-2">AWS</p>
+                    </div>
+                    <div class="skill-item w-20 text-center transition-all duration-300 group-hover:blur-[2px] hover:!blur-none hover:-translate-y-4 hover:scale-110 cursor-pointer">
+                        <p class="text-white border border-neon rounded py-3 bg-gray-800 text-xs font-bold mb-2">DOCKER</p>
+                        <p class="text-neon text-sm font-bold mt-2">Docker</p>
+                    </div>
+                    <div class="skill-item w-20 text-center transition-all duration-300 group-hover:blur-[2px] hover:!blur-none hover:-translate-y-4 hover:scale-110 cursor-pointer">
+                        <p class="text-white border border-neon rounded py-3 bg-gray-800 text-xs font-bold mb-2">GIT</p>
+                        <p class="text-neon text-sm font-bold mt-2">Git/Gitea</p>
+                    </div>
+                    <div class="skill-item w-20 text-center transition-all duration-300 group-hover:blur-[2px] hover:!blur-none hover:-translate-y-4 hover:scale-110 cursor-pointer">
+                        <p class="text-white border border-neon rounded py-3 bg-gray-800 text-xs font-bold mb-2">CI/CD</p>
+                        <p class="text-neon text-sm font-bold mt-2">Actions</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 4: Programming Languages -->
+            <div class="bg-black/80 border border-neon p-6 rounded-xl shadow-[0_0_15px_rgba(0,255,0,0.3)] md:col-span-2 xl:col-span-1">
+                <h3 class="text-xl font-bold text-white mb-4 border-b border-neon/50 pb-2 text-center uppercase tracking-widest drop-shadow-[0_0_5px_#00ff00]">Languages</h3>
+                <div class="group flex flex-wrap justify-center gap-4 mt-6">
+                    <div class="skill-item w-20 text-center transition-all duration-300 group-hover:blur-[2px] hover:!blur-none hover:-translate-y-4 hover:scale-110 cursor-pointer">
+                        <img src="../images/python.png" alt="Python" class="w-12 h-12 mx-auto mb-2 drop-shadow-[0_0_5px_#00ff00]" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5968/5968350.png'">
+                        <p class="text-neon text-sm font-bold mt-2">Python</p>
+                    </div>
+                    <div class="skill-item w-20 text-center transition-all duration-300 group-hover:blur-[2px] hover:!blur-none hover:-translate-y-4 hover:scale-110 cursor-pointer">
+                        <img src="../images/java.png" alt="Java" class="w-12 h-12 mx-auto mb-2 drop-shadow-[0_0_5px_#00ff00]" onerror="this.src='https://cdn-icons-png.flaticon.com/512/226/226777.png'">
+                        <p class="text-neon text-sm font-bold mt-2">Java</p>
+                    </div>
+                    <div class="skill-item w-20 text-center transition-all duration-300 group-hover:blur-[2px] hover:!blur-none hover:-translate-y-4 hover:scale-110 cursor-pointer">
+                        <img src="../images/php.png" alt="PHP" class="w-12 h-12 mx-auto mb-2 drop-shadow-[0_0_5px_#00ff00]" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5968/5968332.png'">
+                        <p class="text-neon text-sm font-bold mt-2">PHP</p>
+                    </div>
+                    <div class="skill-item w-20 text-center transition-all duration-300 group-hover:blur-[2px] hover:!blur-none hover:-translate-y-4 hover:scale-110 cursor-pointer">
+                        <p class="text-white border border-neon rounded py-3 bg-gray-800 text-xs font-bold mb-2">C#</p>
+                        <p class="text-neon text-sm font-bold mt-2">C# / C</p>
+                    </div>
+                    <div class="skill-item w-20 text-center transition-all duration-300 group-hover:blur-[2px] hover:!blur-none hover:-translate-y-4 hover:scale-110 cursor-pointer">
+                        <img src="../images/javascript.png" alt="JS" class="w-12 h-12 mx-auto mb-2 drop-shadow-[0_0_5px_#00ff00]" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5968/5968292.png'">
+                        <p class="text-neon text-sm font-bold mt-2">JavaScript</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 5: Data Engineering & BI -->
+            <div class="bg-black/80 border border-neon p-6 rounded-xl shadow-[0_0_15px_rgba(0,255,0,0.3)] md:col-span-2 xl:col-span-2">
+                <h3 class="text-xl font-bold text-white mb-4 border-b border-neon/50 pb-2 text-center uppercase tracking-widest drop-shadow-[0_0_5px_#00ff00]">Data Engineering & BI</h3>
+                <div class="group flex flex-wrap justify-center gap-4 mt-6">
+                    <div class="skill-item w-20 text-center transition-all duration-300 group-hover:blur-[2px] hover:!blur-none hover:-translate-y-4 hover:scale-110 cursor-pointer">
+                        <p class="text-white border border-neon rounded py-3 bg-gray-800 text-xs font-bold mb-2">POSTGRES</p>
+                        <p class="text-neon text-sm font-bold mt-2">PostgreSQL</p>
+                    </div>
+                    <div class="skill-item w-20 text-center transition-all duration-300 group-hover:blur-[2px] hover:!blur-none hover:-translate-y-4 hover:scale-110 cursor-pointer">
+                        <p class="text-white border border-neon rounded py-3 bg-gray-800 text-xs font-bold mb-2">MONGO</p>
+                        <p class="text-neon text-sm font-bold mt-2">MongoDB</p>
+                    </div>
+                    <div class="skill-item w-20 text-center transition-all duration-300 group-hover:blur-[2px] hover:!blur-none hover:-translate-y-4 hover:scale-110 cursor-pointer">
+                        <img src="../images/sql.png" alt="SQL" class="w-12 h-12 mx-auto mb-2 drop-shadow-[0_0_5px_#00ff00]" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2772/2772128.png'">
+                        <p class="text-neon text-sm font-bold mt-2">SQL</p>
+                    </div>
+                    <div class="skill-item w-20 text-center transition-all duration-300 group-hover:blur-[2px] hover:!blur-none hover:-translate-y-4 hover:scale-110 cursor-pointer">
+                        <p class="text-white border border-neon rounded py-3 bg-gray-800 text-xs font-bold mb-2">ETL</p>
+                        <p class="text-neon text-sm font-bold mt-2">Pipelines</p>
+                    </div>
+                    <div class="skill-item w-20 text-center transition-all duration-300 group-hover:blur-[2px] hover:!blur-none hover:-translate-y-4 hover:scale-110 cursor-pointer">
+                        <p class="text-white border border-neon rounded py-3 bg-gray-800 text-xs font-bold mb-2">SSIS/SSAS</p>
+                        <p class="text-neon text-sm font-bold mt-2">OLAP Cubes</p>
+                    </div>
+                    <div class="skill-item w-20 text-center transition-all duration-300 group-hover:blur-[2px] hover:!blur-none hover:-translate-y-4 hover:scale-110 cursor-pointer">
+                        <p class="text-white border border-neon rounded py-3 bg-gray-800 text-xs font-bold mb-2">POWER BI</p>
+                        <p class="text-neon text-sm font-bold mt-2">Power BI</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Mahdi Zouari | Software Engineering. All Rights Reserved.</p>
+    <footer class="bg-black text-center py-6 border-t border-neon shadow-[0_-5px_15px_rgba(0,255,0,0.2)]">
+        <p class="text-gray-400 text-sm md:text-base">&copy; 2026 Mahdi Zouari | Designed with dedication and passion.</p>
     </footer>
-    
-    <script src="javascript/script.js" ></script>
+
+    <script src="../javascript/script.js"></script>
 </body>
 </html>

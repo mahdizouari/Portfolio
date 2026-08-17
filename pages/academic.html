@@ -3,185 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Website</title>
+    <title>Academic Background | Mahdi Zouari</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config to match your custom theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        mono: ['"Courier New"', 'Courier', 'monospace'],
+                    },
+                    colors: {
+                        neon: '#00ff00',
+                        darkBg: 'rgba(0, 0, 0, 0.9)',
+                    }
+                }
+            }
+        }
+    </script>
+    
     <link rel="stylesheet" href="../style/style.css">
     <iframe src="../audio.html" style="display:none;"></iframe>
-
 </head>
-<body>
+<body class="bg-gray-900 text-white font-mono">
+    
     <!-- Navigation Menu -->
-    <nav>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="academic.html">Academic Background</a></li>
-            <li><a href="skills.html">Technical Skills</a></li>
-            <li><a href="experience.html">Work Experience</a></li>
-            <li><a href="hobbies.html">Hobbies</a></li>
-            <li><a href="quiz.html">Quiz</a></li>
-            <li><a href="contact.html">Contact</a></li>
+    <nav class="bg-black/95 p-5 border-b border-neon shadow-[0_0_15px_rgba(0,255,0,0.3)] sticky top-0 z-50">
+        <ul class="flex flex-wrap justify-center gap-6 text-neon font-bold tracking-wide">
+            <li><a href="../index.html" class="hover:text-white transition-colors duration-300">Home</a></li>
+            <li><a href="academic.html" class="text-white drop-shadow-[0_0_8px_#00ff00]">Academic Background</a></li>
+            <li><a href="skills.html" class="hover:text-white transition-colors duration-300">Technical Skills</a></li>
+            <li><a href="experience.html" class="hover:text-white transition-colors duration-300">Work Experience & Projects</a></li>
+            <li><a href="hobbies.html" class="hover:text-white transition-colors duration-300">Hobbies</a></li>
+            <li><a href="quiz.html" class="hover:text-white transition-colors duration-300">Quiz</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors duration-300">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Academic Journey Section -->
-    <section id="academic" class="academic-section">
-       
+    <section id="academic" class="min-h-screen bg-darkBg py-20 px-4 md:px-8 flex flex-col items-center shadow-inner">
+        <h2 class="text-3xl md:text-5xl font-bold mb-20 text-neon drop-shadow-[0_0_10px_#00ff00] uppercase tracking-wider text-center">My Academic Journey</h2>
 
-        <h2>My Academic Journey</h2>
-       
-        <div class="timeline">
-            <!-- Bac Entry -->
-            <div class="timeline-item">
-                <div class="timeline-date">2020/2021</div>
-                <div class="timeline-content">
-                    <h3>Baccalaureate Mathematics</h3>
-                    <p>
-                        Successfully earned my <strong>Baccalaureate Mathematics</strong>, a testament to my problem-solving and analytical skills, paving the way for my future endeavors.
-                    </p>
+        <!-- Timeline Container -->
+        <div class="relative w-full max-w-5xl mx-auto">
+            
+            <!-- Central Glowing Line -->
+            <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-neon to-green-900 md:-translate-x-1/2 rounded-full shadow-[0_0_10px_#00ff00]"></div>
+
+            <!-- 1. Engineering Degree Entry -->
+            <div class="relative flex flex-col md:flex-row items-center justify-between mb-16 w-full group">
+                <!-- Left Space (Desktop) -->
+                <div class="hidden md:block w-5/12"></div>
+                
+                <!-- Timeline Node -->
+                <div class="absolute left-4 md:left-1/2 w-6 h-6 bg-black border-4 border-neon rounded-full transform -translate-x-[10px] md:-translate-x-1/2 z-10 shadow-[0_0_10px_#00ff00] group-hover:bg-neon transition-colors duration-300"></div>
+                
+                <!-- Content Card (Right side on Desktop) -->
+                <div class="w-full md:w-5/12 pl-12 md:pl-0">
+                    <div class="bg-black/80 border border-neon p-6 rounded-xl shadow-[0_0_15px_rgba(0,255,0,0.2)] group-hover:shadow-[0_0_30px_rgba(0,255,0,0.6)] group-hover:-translate-y-2 transition-all duration-300 relative">
+                        <span class="absolute -top-4 left-4 md:left-auto md:right-4 bg-gray-800 text-neon font-bold py-1 px-4 rounded shadow-[0_0_8px_#00ff00] text-sm md:text-base">In Progress</span>
+                        <h3 class="text-xl md:text-2xl font-bold text-neon mb-1 mt-2">Engineering Degree – Software Engineering</h3>
+                        <h4 class="text-md text-gray-300 mb-3 italic">International Institute of Technology (IIT), Sfax</h4>
+                        <p class="text-gray-400 leading-relaxed text-sm md:text-base">Focusing on advanced software architectures, machine learning, and data engineering methodologies. Preparing for a research-oriented career in building scalable, intelligent systems.</p>
+                    </div>
                 </div>
             </div>
 
-            <!-- Diploma Entry -->
-            <div class="timeline-item">
-                <div class="timeline-date">2021/2024</div>
-                <div class="timeline-content">
-                    <h3>Diploma in Computer Science</h3>
-                    <p>
-                        Obtained my <strong>Diploma in Computer Science</strong> from the <strong>Institut Supérieur de l'Informatique et Multimédia de Gabès</strong>, honing my technical and programming skills to shape my professional journey.
-                    </p>
+            <!-- 2. Bachelor's Degree Entry -->
+            <div class="relative flex flex-col md:flex-row items-center justify-between mb-16 w-full group">
+                <!-- Content Card (Left side on Desktop) -->
+                <div class="w-full md:w-5/12 pl-12 md:pl-0 md:pr-0 md:text-right order-2 md:order-1">
+                    <div class="bg-black/80 border border-neon p-6 rounded-xl shadow-[0_0_15px_rgba(0,255,0,0.2)] group-hover:shadow-[0_0_30px_rgba(0,255,0,0.6)] group-hover:-translate-y-2 transition-all duration-300 relative md:text-right text-left">
+                        <span class="absolute -top-4 left-4 bg-gray-800 text-neon font-bold py-1 px-4 rounded shadow-[0_0_8px_#00ff00] text-sm md:text-base">June 2024</span>
+                        <h3 class="text-xl md:text-2xl font-bold text-neon mb-1 mt-2">Bachelor's Degree in Computer Science</h3>
+                        <h4 class="text-md text-gray-300 mb-3 italic">Higher Institute of Computer Science and Multimedia, Gabès</h4>
+                        <p class="text-gray-400 leading-relaxed text-sm md:text-base">Developed foundational technical and programming skills. Culminated in a full-stack AR educational application project.</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Node -->
+                <div class="absolute left-4 md:left-1/2 w-6 h-6 bg-black border-4 border-neon rounded-full transform -translate-x-[10px] md:-translate-x-1/2 z-10 shadow-[0_0_10px_#00ff00] group-hover:bg-neon transition-colors duration-300 order-1 md:order-2"></div>
+                
+                <!-- Right Space (Desktop) -->
+                <div class="hidden md:block w-5/12 order-3"></div>
+            </div>
+
+            <!-- 3. Baccalaureate Entry -->
+            <div class="relative flex flex-col md:flex-row items-center justify-between w-full group">
+                <!-- Left Space (Desktop) -->
+                <div class="hidden md:block w-5/12"></div>
+                
+                <!-- Timeline Node -->
+                <div class="absolute left-4 md:left-1/2 w-6 h-6 bg-black border-4 border-neon rounded-full transform -translate-x-[10px] md:-translate-x-1/2 z-10 shadow-[0_0_10px_#00ff00] group-hover:bg-neon transition-colors duration-300"></div>
+                
+                <!-- Content Card (Right side on Desktop) -->
+                <div class="w-full md:w-5/12 pl-12 md:pl-0">
+                    <div class="bg-black/80 border border-neon p-6 rounded-xl shadow-[0_0_15px_rgba(0,255,0,0.2)] group-hover:shadow-[0_0_30px_rgba(0,255,0,0.6)] group-hover:-translate-y-2 transition-all duration-300 relative">
+                        <span class="absolute -top-4 left-4 md:left-auto md:right-4 bg-gray-800 text-neon font-bold py-1 px-4 rounded shadow-[0_0_8px_#00ff00] text-sm md:text-base">June 2021</span>
+                        <h3 class="text-xl md:text-2xl font-bold text-neon mb-1 mt-2">Baccalaureate in Mathematics</h3>
+                        <h4 class="text-md text-gray-300 mb-3 italic">Fadhel Ben Achour High School, Sfax</h4>
+                        <p class="text-gray-400 leading-relaxed text-sm md:text-base">Cultivated strong analytical thinking and complex problem-solving abilities, establishing the mathematical foundation for my engineering journey.</p>
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Personal Website | Designed with dedication and passion. Stay connected through my journey of growth and achievements.</p>
+    <footer class="bg-black text-center py-6 border-t border-neon shadow-[0_-5px_15px_rgba(0,255,0,0.2)]">
+        <p class="text-gray-400 text-sm md:text-base">&copy; 2026 Mahdi Zouari | Designed with dedication and passion.</p>
     </footer>
+
+    <script src="../javascript/script.js"></script>
 </body>
 </html>
-<style>
-    .academic-section {
-        background: rgba(0, 0, 0, 0.9); /* Dark background */
-    color: #ffffff;
-    padding: 80px;
-    
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace; /* Monospaced font */
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
-        flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center;
-    min-height: 15px; /* Ensures the section takes full viewport height */
-}
-
-.academic-section h2 {
-    font-size: 2.8em;
-    margin-bottom: 40px;
-    color: #00ff00; /* Green accent */
-    text-shadow: 0 0 10px #00ff00;
-    font-family: 'Courier New', Courier, monospace; /* Monospaced font */
-
-}
-
-/* Timeline Container */
-.timeline {
-    position: relative;
-    margin: 0 auto;
-    width: 90%;
-    max-width: 800px;
-    padding: 20px 0;
-}
-
-.timeline::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    width: 5px;
-    height: 100%;
-    background: linear-gradient(to bottom, #00ff00, #004400);
-    transform: translateX(-50%);
-}
-
-/* Timeline Items */
-.timeline-item {
-    position: relative;
-    margin: 40px 0;
-}
-
-.timeline-date {
-    font-size: 1.4em;
-    font-weight: bold;
-    color: #00ff00;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: -31px;
-    background: #333;
-    padding: 1px 12px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px #00ff00;
-    text-shadow: 0 0 5px #00ff00;
-}
-
-.timeline-content {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 10px;
-    border: 1px solid #00ff00;
-    border-radius: 10px;
-    width: 45%;
-    text-align: left;
-    position: relative;
-    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
-    transition: all 0.3s ease-in-out;
-}
-
-.timeline-content h3 {
-    font-size: 1.7em;
-    margin-bottom: 15px;
-    color: #00ff00;
-    font-family: 'Courier New', Courier, monospace; /* Monospaced font */
-
-}
-
-.timeline-content p {
-    margin: 0;
-    font-size: 1.1em;
-    line-height: 1.7;
-    color: #e0e0e0;
-}
-
-/* Alternate Timeline Content Positions */
-.timeline-item:nth-child(even) .timeline-content {
-    left: 55%;
-}
-
-.timeline-item:nth-child(odd) .timeline-content {
-    left: 0;
-}
-
-/* Hover Effects */
-.timeline-content:hover {
-    box-shadow: 0 0 25px #00ff00, 0 0 40px #00ff00;
-    transform: translateY(-10px) scale(1.05);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .timeline::before {
-        left: 20px;
-    }
-
-    .timeline-item:nth-child(even) .timeline-content,
-    .timeline-item:nth-child(odd) .timeline-content {
-        width: 80%;
-        left: 10%;
-    }
-
-    .timeline-date {
-        left: 20px;
-        transform: none;
-    }
-}
-</style>
-<script src="../javascript/script.js"></script>
