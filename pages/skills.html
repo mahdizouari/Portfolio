@@ -3,221 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Technical Skills</title>
+    <title>Technical Skills | Mahdi Zouari</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        mono: ['"Courier New"', 'Courier', 'monospace'],
+                    },
+                    colors: {
+                        neon: '#00ff00',
+                        darkBg: 'rgba(0, 0, 0, 0.9)',
+                    },
+                    animation: {
+                        'shine': 'shine 3s linear infinite',
+                    },
+                    keyframes: {
+                        shine: {
+                            '0%': { backgroundPosition: '0% 50%' },
+                            '100%': { backgroundPosition: '100% 50%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
     <link rel="stylesheet" href="../style/style.css">
+    
+    <!-- Preserved custom CSS for the specific complex hover/blur animations -->
+    <style>
+        .skills-container:hover .skill-item {
+            filter: blur(3px);
+            opacity: 0.6;
+        }
+        .skills-container .skill-item:hover {
+            filter: none;
+            opacity: 1;
+            transform: scale(1.15);
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+            z-index: 10;
+        }
+        .skill-item img, .skill-item .text-icon {
+            transition: transform 0.4s ease, width 0.4s ease, height 0.4s ease;
+        }
+        .skill-item:hover img, .skill-item:hover .text-icon {
+            transform: translateY(-15px);
+            width: 65px;
+            height: 65px;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-mono">
     <div id="audio-container">
         <iframe src="../audio.html" style="display:none;"></iframe>
-
     </div>
-</head>
-<body>
+
     <!-- Navigation Menu -->
-    <nav>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="academic.html">Academic Background</a></li>
-            <li><a href="skills.html">Technical Skills</a></li>
-            <li><a href="experience.html">Work Experience</a></li>
-            <li><a href="hobbies.html">Hobbies</a></li>
-            <li><a href="quiz.html">Quiz</a></li>
-            <li><a href="contact.html">Contact</a></li>
+    <nav class="bg-black/95 p-5 border-b border-neon shadow-[0_0_15px_rgba(0,255,0,0.3)] sticky top-0 z-50">
+        <ul class="flex flex-wrap justify-center gap-6 text-neon font-bold tracking-wide">
+            <li><a href="../index.html" class="hover:text-white transition-colors duration-300">Home</a></li>
+            <li><a href="academic.html" class="hover:text-white transition-colors duration-300">Academic Background</a></li>
+            <li><a href="skills.html" class="text-white drop-shadow-[0_0_8px_#00ff00]">Technical Skills</a></li>
+            <li><a href="experience.html" class="hover:text-white transition-colors duration-300">Work Experience</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors duration-300">Contact</a></li>
         </ul>
     </nav>
 
     <!-- Technical Skills Section -->
-    <section class="skills-section">
+    <section class="min-h-screen bg-darkBg py-20 px-4 md:px-8 flex flex-col items-center shadow-[0_0_15px_rgba(0,255,0,0.5)]">
         
-        <h2>Technical Skills</h2>
-        <p class="skills-intro">
-            Over the years, I have acquired a diverse set of technical skills, enabling me to work on complex projects efficiently. Below is a showcase of my expertise:
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-neon via-white to-neon animate-shine drop-shadow-[0_0_10px_rgba(0,255,0,0.8)]" style="background-size: 200% auto;">
+            Technical Skills
+        </h2>
+        
+        <p class="text-neon text-lg md:text-xl text-center max-w-4xl mb-16 drop-shadow-[0_0_5px_#00ff00] leading-relaxed">
+            Over the years, I have acquired a diverse set of technical skills, enabling me to work on complex projects efficiently. Below is a showcase of my expertise aligned with Software Engineering, Machine Learning, and Data Architectures:
         </p>
-        <div class="skills-container">
-            <!-- Row 1 -->
-            <div class="skill-item">
-                <img src="../images/laravel.png" alt="Laravel">
-                <p>Laravel</p>
+
+        <!-- Main Skills Wrapper -->
+        <div class="w-full max-w-6xl space-y-12">
+
+            <!-- Category: AI, ML & Data Science -->
+            <div class="bg-black/80 border border-neon p-6 rounded-xl shadow-[0_0_15px_rgba(0,255,0,0.2)]">
+                <h3 class="text-xl font-bold text-white mb-6 border-b border-neon/50 pb-2 text-center uppercase tracking-widest">AI, ML & Data Science</h3>
+                <div class="skills-container flex flex-wrap justify-center gap-6">
+                    <div class="skill-item bg-gray-900 border border-neon/50 p-4 rounded-lg w-28 flex flex-col items-center justify-center transition-all duration-300 cursor-pointer">
+                        <img src="../images/python.png" alt="Python" class="w-12 h-12 mb-3 drop-shadow-[0_0_5px_#00ff00]" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5968/5968350.png'">
+                        <p class="text-neon text-sm font-bold">Scikit-learn</p>
+                    </div>
+                    <div class="skill-item bg-gray-900 border border-neon/50 p-4 rounded-lg w-28 flex flex-col items-center justify-center transition-all duration-300 cursor-pointer">
+                        <div class="text-icon w-12 h-12 flex items-center justify-center border border-neon text-white text-xs font-bold rounded mb-3 bg-black">PANDAS</div>
+                        <p class="text-neon text-sm font-bold">Pandas/NumPy</p>
+                    </div>
+                    <div class="skill-item bg-gray-900 border border-neon/50 p-4 rounded-lg w-28 flex flex-col items-center justify-center transition-all duration-300 cursor-pointer">
+                        <div class="text-icon w-12 h-12 flex items-center justify-center border border-neon text-white text-xs font-bold rounded mb-3 bg-black">LGBM</div>
+                        <p class="text-neon text-sm font-bold">LightGBM</p>
+                    </div>
+                    <div class="skill-item bg-gray-900 border border-neon/50 p-4 rounded-lg w-28 flex flex-col items-center justify-center transition-all duration-300 cursor-pointer">
+                        <div class="text-icon w-12 h-12 flex items-center justify-center border border-neon text-white text-xs font-bold rounded mb-3 bg-black">STATS</div>
+                        <p class="text-neon text-sm font-bold">ARIMA</p>
+                    </div>
+                </div>
             </div>
-            <div class="skill-item">
-                <img src="../images/php.png" alt="PHP">
-                <p>PHP</p>
+
+            <!-- Category: DevOps & Cloud -->
+            <div class="bg-black/80 border border-neon p-6 rounded-xl shadow-[0_0_15px_rgba(0,255,0,0.2)]">
+                <h3 class="text-xl font-bold text-white mb-6 border-b border-neon/50 pb-2 text-center uppercase tracking-widest">DevOps, Cloud & Tools</h3>
+                <div class="skills-container flex flex-wrap justify-center gap-6">
+                    <div class="skill-item bg-gray-900 border border-neon/50 p-4 rounded-lg w-28 flex flex-col items-center justify-center transition-all duration-300 cursor-pointer">
+                        <div class="text-icon w-12 h-12 flex items-center justify-center border border-neon text-white text-xs font-bold rounded mb-3 bg-black">AWS</div>
+                        <p class="text-neon text-sm font-bold">Amazon AWS</p>
+                    </div>
+                    <div class="skill-item bg-gray-900 border border-neon/50 p-4 rounded-lg w-28 flex flex-col items-center justify-center transition-all duration-300 cursor-pointer">
+                        <div class="text-icon w-12 h-12 flex items-center justify-center border border-neon text-white text-xs font-bold rounded mb-3 bg-black">DOCKER</div>
+                        <p class="text-neon text-sm font-bold">Docker</p>
+                    </div>
+                    <div class="skill-item bg-gray-900 border border-neon/50 p-4 rounded-lg w-28 flex flex-col items-center justify-center transition-all duration-300 cursor-pointer">
+                        <div class="text-icon w-12 h-12 flex items-center justify-center border border-neon text-white text-xs font-bold rounded mb-3 bg-black">GIT</div>
+                        <p class="text-neon text-sm font-bold">Git/Gitea</p>
+                    </div>
+                    <div class="skill-item bg-gray-900 border border-neon/50 p-4 rounded-lg w-28 flex flex-col items-center justify-center transition-all duration-300 cursor-pointer">
+                        <div class="text-icon w-12 h-12 flex items-center justify-center border border-neon text-white text-xs font-bold rounded mb-3 bg-black">CI/CD</div>
+                        <p class="text-neon text-sm font-bold">GH Actions</p>
+                    </div>
+                </div>
             </div>
-            <div class="skill-item">
-                <img src="../images/java.png" alt="Java">
-                <p>Java</p>
+
+            <!-- Category: Software Architecture & Backend -->
+            <div class="bg-black/80 border border-neon p-6 rounded-xl shadow-[0_0_15px_rgba(0,255,0,0.2)]">
+                <h3 class="text-xl font-bold text-white mb-6 border-b border-neon/50 pb-2 text-center uppercase tracking-widest">Software Architecture</h3>
+                <div class="skills-container flex flex-wrap justify-center gap-6">
+                    <div class="skill-item bg-gray-900 border border-neon/50 p-4 rounded-lg w-28 flex flex-col items-center justify-center transition-all duration-300 cursor-pointer">
+                        <img src="../images/laravel.png" alt="Laravel" class="w-12 h-12 mb-3 drop-shadow-[0_0_5px_#00ff00]" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5968/5968332.png'">
+                        <p class="text-neon text-sm font-bold">Laravel</p>
+                    </div>
+                    <div class="skill-item bg-gray-900 border border-neon/50 p-4 rounded-lg w-28 flex flex-col items-center justify-center transition-all duration-300 cursor-pointer">
+                        <img src="../images/symfony.png" alt="Symfony" class="w-12 h-12 mb-3 drop-shadow-[0_0_5px_#00ff00]" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5968/5968332.png'">
+                        <p class="text-neon text-sm font-bold">Symfony</p>
+                    </div>
+                    <div class="skill-item bg-gray-900 border border-neon/50 p-4 rounded-lg w-28 flex flex-col items-center justify-center transition-all duration-300 cursor-pointer">
+                        <div class="text-icon w-12 h-12 flex items-center justify-center border border-neon text-white text-xs font-bold rounded mb-3 bg-black">SPRING</div>
+                        <p class="text-neon text-sm font-bold">Spring Boot</p>
+                    </div>
+                    <div class="skill-item bg-gray-900 border border-neon/50 p-4 rounded-lg w-28 flex flex-col items-center justify-center transition-all duration-300 cursor-pointer">
+                        <div class="text-icon w-12 h-12 flex items-center justify-center border border-neon text-white text-xs font-bold rounded mb-3 bg-black">.NET</div>
+                        <p class="text-neon text-sm font-bold">ASP.NET</p>
+                    </div>
+                    <div class="skill-item bg-gray-900 border border-neon/50 p-4 rounded-lg w-28 flex flex-col items-center justify-center transition-all duration-300 cursor-pointer">
+                        <div class="text-icon w-12 h-12 flex items-center justify-center border border-neon text-white text-xs font-bold rounded mb-3 bg-black">FAST</div>
+                        <p class="text-neon text-sm font-bold">FastAPI</p>
+                    </div>
+                </div>
             </div>
-        
-            <!-- Row 2 -->
-            <div class="skill-item">
-                <img src="../images/javascript.png" alt="JavaScript">
-                <p>JavaScript</p>
+
+            <!-- Category: Databases & Frontend (Combined for space) -->
+            <div class="bg-black/80 border border-neon p-6 rounded-xl shadow-[0_0_15px_rgba(0,255,0,0.2)]">
+                <h3 class="text-xl font-bold text-white mb-6 border-b border-neon/50 pb-2 text-center uppercase tracking-widest">Data Engineering & Frontend</h3>
+                <div class="skills-container flex flex-wrap justify-center gap-6">
+                    <div class="skill-item bg-gray-900 border border-neon/50 p-4 rounded-lg w-28 flex flex-col items-center justify-center transition-all duration-300 cursor-pointer">
+                        <img src="../images/sql.png" alt="SQL" class="w-12 h-12 mb-3 drop-shadow-[0_0_5px_#00ff00]" onerror="this.src='https://cdn-icons-png.flaticon.com/512/2772/2772128.png'">
+                        <p class="text-neon text-sm font-bold">SQL / MySQL</p>
+                    </div>
+                    <div class="skill-item bg-gray-900 border border-neon/50 p-4 rounded-lg w-28 flex flex-col items-center justify-center transition-all duration-300 cursor-pointer">
+                        <div class="text-icon w-12 h-12 flex items-center justify-center border border-neon text-white text-xs font-bold rounded mb-3 bg-black">PSQL</div>
+                        <p class="text-neon text-sm font-bold">PostgreSQL</p>
+                    </div>
+                    <div class="skill-item bg-gray-900 border border-neon/50 p-4 rounded-lg w-28 flex flex-col items-center justify-center transition-all duration-300 cursor-pointer">
+                        <img src="../images/javascript.png" alt="JavaScript" class="w-12 h-12 mb-3 drop-shadow-[0_0_5px_#00ff00]" onerror="this.src='https://cdn-icons-png.flaticon.com/512/5968/5968292.png'">
+                        <p class="text-neon text-sm font-bold">JavaScript</p>
+                    </div>
+                    <div class="skill-item bg-gray-900 border border-neon/50 p-4 rounded-lg w-28 flex flex-col items-center justify-center transition-all duration-300 cursor-pointer">
+                        <div class="text-icon w-12 h-12 flex items-center justify-center border border-neon text-white text-xs font-bold rounded mb-3 bg-black">ANGULAR</div>
+                        <p class="text-neon text-sm font-bold">Angular</p>
+                    </div>
+                </div>
             </div>
-            <div class="skill-item">
-                <img src="../images/symfony.png" alt="Symfony">
-                <p>Symfony</p>
+
+            <!-- Legacy Languages (Kept your original icons) -->
+            <div class="bg-black/80 border border-neon p-6 rounded-xl shadow-[0_0_15px_rgba(0,255,0,0.2)]">
+                <h3 class="text-xl font-bold text-white mb-6 border-b border-neon/50 pb-2 text-center uppercase tracking-widest">Programming Languages</h3>
+                <div class="skills-container flex flex-wrap justify-center gap-6">
+                    <div class="skill-item bg-gray-900 border border-neon/50 p-4 rounded-lg w-28 flex flex-col items-center justify-center transition-all duration-300 cursor-pointer">
+                        <img src="../images/python.png" alt="Python" class="w-12 h-12 mb-3 drop-shadow-[0_0_5px_#00ff00]">
+                        <p class="text-neon text-sm font-bold">Python</p>
+                    </div>
+                    <div class="skill-item bg-gray-900 border border-neon/50 p-4 rounded-lg w-28 flex flex-col items-center justify-center transition-all duration-300 cursor-pointer">
+                        <img src="../images/java.png" alt="Java" class="w-12 h-12 mb-3 drop-shadow-[0_0_5px_#00ff00]">
+                        <p class="text-neon text-sm font-bold">Java</p>
+                    </div>
+                    <div class="skill-item bg-gray-900 border border-neon/50 p-4 rounded-lg w-28 flex flex-col items-center justify-center transition-all duration-300 cursor-pointer">
+                        <img src="../images/php.png" alt="PHP" class="w-12 h-12 mb-3 drop-shadow-[0_0_5px_#00ff00]">
+                        <p class="text-neon text-sm font-bold">PHP</p>
+                    </div>
+                    <div class="skill-item bg-gray-900 border border-neon/50 p-4 rounded-lg w-28 flex flex-col items-center justify-center transition-all duration-300 cursor-pointer">
+                        <img src="../images/c.png" alt="C" class="w-12 h-12 mb-3 drop-shadow-[0_0_5px_#00ff00]">
+                        <p class="text-neon text-sm font-bold">C / C#</p>
+                    </div>
+                </div>
             </div>
-            <div class="skill-item">
-                <img src="../images/python.png" alt="Python">
-                <p>Python</p>
-            </div>
-            <div class="skill-item">
-                <img src="../images/c.png" alt="C">
-                <p>C</p>
-            </div>
-        
-            <!-- Row 3 -->
-            <div class="skill-item">
-                <img src="../images/html.png" alt="HTML">
-                <p>HTML</p>
-            </div>
-            <div class="skill-item">
-                <img src="../images/css.png" alt="CSS">
-                <p>CSS</p>
-            </div>
-            <div class="skill-item">
-                <img src="../images/sql.png" alt="SQL">
-                <p>SQL</p>
-            </div>
+
         </div>
-    
-    
+    </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Personal Website | Designed with dedication and passion. Stay connected through my journey of growth and achievements.</p>
+    <footer class="bg-black text-center py-6 border-t border-neon shadow-[0_-5px_15px_rgba(0,255,0,0.2)] mt-auto">
+        <p class="text-gray-400 text-sm md:text-base">&copy; 2026 Mahdi Zouari | Designed with dedication and passion.</p>
     </footer>
+
+    <script src="../javascript/script.js"></script>
 </body>
 </html>
-<style>
-    .skills-intro {
-    font-size: 1.2em;
-    color: #00ff00;
-    margin-bottom: 0px;
-    max-width: 800px;
-    margin: -20px auto 40px;
-    line-height: 1.6;
-    text-shadow: 0 0 5px #00ff00;
-}
-    
-
-/* Main container for the skills section to take full height */
-.skills-section {
-    background: rgba(0, 0, 0, 0.9); /* Dark background */
-    color: #ffffff;
-    padding: 80px;
-    
-    text-align: center;
-    font-family: 'Courier New', Courier, monospace; /* Monospaced font */
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
-    flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center;
-    min-height: 15px; /* Ensures the section takes full viewport height */
-}
-
-.skills-section h2 {
-    font-size: 2.8em;
-    margin-bottom: 30px;
-    background: linear-gradient(90deg, #00ff00, #ffffff, #00ff00); /* Gradient effect */
-    -webkit-background-clip: text; /* Ensures gradient applies to text */
-    -webkit-text-fill-color: transparent; /* Makes text background visible */
-    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00; /* Adds glow */
-    animation: shine 3s linear infinite; /* Optional: Animates the shine */
-}
-
-/* Optional: Animation for a subtle shine effect */
-@keyframes shine {
-    0% {
-        background-position: 0% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
-}
-
-
-/* Skills container with centered items */
-.skills-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 50px;
-    width: 100%;
-    max-width: 1200px; /* Optional: Limits container width */
-    margin: 0 auto;
-    padding: 70px 20px;
-    box-sizing: border-box;
-}
-
-/* Individual skill items */
-.skill-item {
-    background: rgba(0, 0, 0, 0.8);
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
-}
-
-.skill-item:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(0, 255, 0, 0.7);
-    
-}
-
-.skill-item img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
-}
-
-.skill-item p {
-    font-size: 1em;
-    color: #00ff00; /* Green accent */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .skills-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 480px) {
-    .skills-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-
-.skills-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.skill-item {
-    position: relative;
-    width: 100px;
-    text-align: center;
-    margin: 10px;
-    transition: filter 0.3s ease;
-}
-
-.skill-item img {
-    width: 50px;
-    transition: transform 0.3s ease, width 0.3s ease;
-}
-
-.skill-item:hover img {
-    transform: translateY(-40px);
-    width: 70px;
-    height: 70px; /* Make the image bigger */
-}
-
-.skills-container:hover .skill-item {
-    filter: blur(2px); /* Blur all items */
-}
-
-.skills-container .skill-item:hover {
-    filter: none; /* Keep the hovered item clear */
-}
-</style>
